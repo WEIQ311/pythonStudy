@@ -26,8 +26,9 @@ def wordCount(url):
     # 文本分词
     seg_list_exact = jieba.cut(string_data, cut_all=False)  # 精确模式分词
     object_list = []
+    # 自定义去除词库
     remove_words = [u'的', u'，', u'和', u'是', u'随着', u'对于', u'对', u'等', u'能', u'都', u'。', u' ', u'、', u'中', u'在', u'了',
-                    u'通常', u'如果', u'我们', u'需要', u'…', u':', u'“', u'”', u'：', u'但', u'型', u'被']  # 自定义去除词库
+                    u'通常', u'如果', u'我们', u'需要', u'…', u':', u'“', u'”', u'：', u'但', u'型', u'被']
 
     for word in seg_list_exact:  # 循环读出每个分词
         if word not in remove_words:  # 如果不在去除词库中
